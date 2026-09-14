@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maze Fireworks</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="sidebar">
+
+<h1>Maze 🎮</h1>
+
+<button class="newbtn" onclick="generateMaze()">New</button>
+
+<div class="controls">
+
+<div class="row">
+<button class="ctrl" onclick="movePlayer(-1,0)">⬆️</button>
+</div>
+
+<div class="row">
+<button class="ctrl" onclick="movePlayer(0,-1)">⬅️</button>
+<button class="ctrl" onclick="movePlayer(1,0)">⬇️</button>
+<button class="ctrl" onclick="movePlayer(0,1)">➡️</button>
+</div>
+
+</div>
+
+</div>
+
+<div class="main">
+<div id="result"></div>
+<div id="fireworks"></div>
+<div id="maze"></div>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

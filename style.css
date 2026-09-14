@@ -1,0 +1,157 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+}
+
+body{
+background:linear-gradient(135deg,#ff6a00,#ff0066);
+}
+
+.container{
+display:flex;
+width:100vw;
+height:100vh;
+overflow:hidden;
+}
+
+/* LEFT PANEL */
+.sidebar{
+width:28%;
+min-width:120px;
+max-width:280px;
+background:rgba(0,0,0,.25);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:10px;
+color:white;
+}
+
+.sidebar h1{
+font-size:clamp(22px,3vw,34px);
+margin-bottom:10px;
+}
+
+.newbtn{
+width:90%;
+max-width:180px;
+padding:12px;
+font-size:20px;
+font-weight:bold;
+border:none;
+border-radius:12px;
+background:#19bdf5;
+color:white;
+margin-bottom:18px;
+cursor:pointer;
+}
+
+.controls{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:8px;
+}
+
+.row{
+display:flex;
+gap:8px;
+}
+
+.ctrl{
+width:60px;
+height:60px;
+font-size:28px;
+border:none;
+border-radius:12px;
+background:#19bdf5;
+color:white;
+cursor:pointer;
+}
+
+/* RIGHT SIDE */
+.main{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:8px;
+position:relative;
+}
+
+#maze{
+height:96vmin;
+width:96vmin;
+max-width:calc(72vw - 10px);
+max-height:calc(100vh - 16px);
+display:grid;
+border:4px solid white;
+background:#111;
+position:relative;
+z-index:2;
+}
+
+.cell{
+border:1px solid rgba(255,255,255,.04);
+}
+
+.wall{background:#000;}
+.path{background:#222;}
+.start{background:#00e676;}
+.end{background:#ff2200;}
+
+.player{
+background:#ffd6e8 !important;
+border-radius:50%;
+box-shadow:0 0 8px white;
+}
+
+/* RESULT */
+#result{
+position:absolute;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+background:rgba(0,0,0,.75);
+color:white;
+padding:16px 24px;
+border-radius:14px;
+font-size:18px;
+display:none;
+z-index:5;
+text-align:center;
+min-width:250px;
+}
+
+/* FIREWORKS */
+#fireworks{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:4;
+}
+
+.spark{
+position:absolute;
+width:8px;
+height:8px;
+border-radius:50%;
+animation:boom 1s linear forwards;
+}
+
+@keyframes boom{
+0%{transform:translate(0,0) scale(1);opacity:1;}
+100%{transform:translate(var(--x),var(--y)) scale(0);opacity:0;}
+}
